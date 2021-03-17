@@ -1849,14 +1849,14 @@
     },
     "m_Name": "WindDirection",
     "m_DefaultReferenceName": "Vector2_5f9fe26546fd4084acfed3b620c37914",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_WindDirection",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "x": 0.0,
+        "x": -1.0,
         "y": 1.0,
         "z": 0.0,
         "w": 0.0

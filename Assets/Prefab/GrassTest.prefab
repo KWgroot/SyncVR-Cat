@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4717261517924837180}
   - component: {fileID: 8563823178446055577}
   - component: {fileID: 5853615768894725203}
+  - component: {fileID: -528287642884205515}
+  - component: {fileID: 7112915394459242563}
   m_Layer: 0
   m_Name: GrassTest
   m_TagString: Untagged
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-528287642884205515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349367022985149830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbb91eaee93d504f804d83f1ed72e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &7112915394459242563
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349367022985149830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7343275056427110438, guid: 86f3103faecf3624e928ffaebe1087f1, type: 3}
