@@ -5,6 +5,13 @@ using UnityEngine;
 public class DestroyMe : MonoBehaviour
 {
     private bool startedCleanup = false;
+
+    private void Start()
+    {
+        Destroy(GetComponent<MeshCollider>(), 0.3f);
+        Destroy(this, 0.3f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (this.name != "CleanupArea")
