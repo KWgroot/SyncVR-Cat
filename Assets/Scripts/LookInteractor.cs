@@ -1,15 +1,19 @@
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LookInteractor : MonoBehaviour
 {
-    private GameManager GameManager;
+    private GameManager gameManager;
+    private CancellationTokenSource cancelToken;
     
     // Start is called before the first frame update
     void Start()
     {
-        GameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -18,15 +22,54 @@ public class LookInteractor : MonoBehaviour
         
     }
 
-    public void LookedAt()
+    public async void Select()
     {
-        Debug.Log("I'VE BEEN SPOTTED");
-        GameManager.LookingAtInteractable(true);
+        cancelToken = new CancellationTokenSource();
+        try
+        {
+            await gameManager.LookingAtInteractable(true, GameManager.Action.Select, cancelToken);
+        }
+        catch (OperationCanceledException exception)
+        {
+            Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+        }
+        finally
+        {
+            cancelToken.Dispose();
+        }
     }
 
-    public void StoppedLooking()
+    public async void WindTrigger()
     {
-        Debug.Log("BYYYYYYYE");
-        GameManager.LookingAtInteractable(false);
+        cancelToken = new CancellationTokenSource();
+        try
+        {
+            await gameManager.LookingAtInteractable(true, GameManager.Action.WindGust, cancelToken);
+        }
+        catch (OperationCanceledException exception)
+        {
+            Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+        }
+        finally
+        {
+            cancelToken.Dispose();
+        }
+    }    
+
+    public async void StoppedLooking()
+    {
+        cancelToken = new CancellationTokenSource();
+        try
+        {
+            await gameManager.LookingAtInteractable(false, GameManager.Action.NoAction, cancelToken);
+        }
+        catch (OperationCanceledException exception)
+        {
+            Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+        }
+        finally
+        {
+            cancelToken.Dispose();
+        }
     }
 }
