@@ -7,11 +7,6 @@ public class GrassMovement : MonoBehaviour
     public Material grass;
     private bool inEffect = false;
 
-    private void Update()
-    {
-
-    }
-
     public void SwayGrass(bool direction, float windForce, float duration)
     {
         StartCoroutine(swayGrass(direction, windForce, duration));

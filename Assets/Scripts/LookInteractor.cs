@@ -9,6 +9,9 @@ public class LookInteractor : MonoBehaviour
 {
     private GameManager gameManager;
     private CancellationTokenSource cancelToken;
+
+    [HideInInspector]
+    public new bool enabled;
     
     // Start is called before the first frame update
     void Start()
@@ -16,60 +19,83 @@ public class LookInteractor : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public async void StoppedLooking()
     {
-        
+        if (enabled)
+        {
+            cancelToken = new CancellationTokenSource();
+            try
+            {
+                await gameManager.LookingAtInteractable(false, GameManager.Action.NoAction, cancelToken, null);
+            }
+            catch (OperationCanceledException exception)
+            {
+                Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+            }
+            finally
+            {
+                cancelToken.Dispose();
+            }
+        }
     }
 
     public async void Select()
     {
-        cancelToken = new CancellationTokenSource();
-        try
+        if (enabled)
         {
-            await gameManager.LookingAtInteractable(true, GameManager.Action.Select, cancelToken);
-        }
-        catch (OperationCanceledException exception)
-        {
-            Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
-        }
-        finally
-        {
-            cancelToken.Dispose();
+            cancelToken = new CancellationTokenSource();
+            try
+            {
+                await gameManager.LookingAtInteractable(true, GameManager.Action.Select, cancelToken, this.gameObject);
+            }
+            catch (OperationCanceledException exception)
+            {
+                Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+            }
+            finally
+            {
+                cancelToken.Dispose();
+            }
         }
     }
 
     public async void WindTrigger()
     {
-        cancelToken = new CancellationTokenSource();
-        try
+        if (enabled)
         {
-            await gameManager.LookingAtInteractable(true, GameManager.Action.WindGust, cancelToken);
+            cancelToken = new CancellationTokenSource();
+            try
+            {
+                await gameManager.LookingAtInteractable(true, GameManager.Action.WindGust, cancelToken, this.gameObject);
+            }
+            catch (OperationCanceledException exception)
+            {
+                Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+            }
+            finally
+            {
+                cancelToken.Dispose();
+            }
         }
-        catch (OperationCanceledException exception)
-        {
-            Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
-        }
-        finally
-        {
-            cancelToken.Dispose();
-        }
-    }    
+    }
 
-    public async void StoppedLooking()
+    public async void CheckpointTrigger()
     {
-        cancelToken = new CancellationTokenSource();
-        try
+        if (enabled)
         {
-            await gameManager.LookingAtInteractable(false, GameManager.Action.NoAction, cancelToken);
-        }
-        catch (OperationCanceledException exception)
-        {
-            Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
-        }
-        finally
-        {
-            cancelToken.Dispose();
+            cancelToken = new CancellationTokenSource();
+            try
+            {
+                await gameManager.LookingAtInteractable(true, GameManager.Action.CheckConditionMet, cancelToken, this.gameObject);
+            }
+            catch (OperationCanceledException exception)
+            {
+                Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+            }
+            finally
+            {
+                cancelToken.Dispose();
+            }
         }
     }
 }

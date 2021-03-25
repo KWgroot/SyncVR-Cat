@@ -18,6 +18,13 @@ public class GameManager : MonoBehaviour
     public bool direction;
     public float windForce, duration;
 
+    [Header("Checkpoint system")]
+    public CheckpointManager checkpointManager;
+
+    [Header("Selected objects")]
+    public GameObject selectedObject;
+    public GameObject currentlyLookingAt;
+
     private bool selectingInteractable = false, selected = false;
     private const int MAX_FILL = 1, MIN_FILL = 0, TASK_DELAY = 50;
 
@@ -27,13 +34,14 @@ public class GameManager : MonoBehaviour
     {
         NoAction = 0,
         Select = 1,
-        WindGust = 2
+        WindGust = 2,
+        CheckConditionMet = 3
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -54,6 +62,7 @@ public class GameManager : MonoBehaviour
             selectionBar.fillAmount = MIN_FILL;
             //SELECTED OBJECT
             selected = true;
+            selectedObject = currentlyLookingAt;
         }
     }
     /// <summary>
@@ -63,11 +72,12 @@ public class GameManager : MonoBehaviour
     /// <param name="action">Action to perform, can be chained after another.</param>
     /// <param name="token">Cancel task if looking away or finished unexpected.</param>
     /// <returns>Task if completed succesfully.</returns>
-    public async Task LookingAtInteractable(bool looking, Action action, CancellationTokenSource token)
+    public async Task LookingAtInteractable(bool looking, Action action, CancellationTokenSource token, GameObject gameObject)
     {
         if (looking)
         {
             cancelToken = token;
+            currentlyLookingAt = gameObject;
             switch (action)
             {
                 case Action.NoAction:
@@ -85,12 +95,19 @@ public class GameManager : MonoBehaviour
                         await Task.Delay(TASK_DELAY, cancelToken.Token);
                     WindGust(direction, windForce, duration);
                     break;
+
+                case Action.CheckConditionMet:
+                    while (!selected)
+                        await Task.Delay(TASK_DELAY, cancelToken.Token);
+                    checkpointManager.ConditionMet(selectedObject);
+                    break;
             }
         }
         else
         {
             selectingInteractable = false;
             selected = false;
+            currentlyLookingAt = null;
         }
     }
     /// <summary>
