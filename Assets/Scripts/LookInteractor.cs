@@ -9,9 +9,6 @@ public class LookInteractor : MonoBehaviour
 {
     private GameManager gameManager;
     private CancellationTokenSource cancelToken;
-
-    [HideInInspector]
-    public new bool enabled;
     
     // Start is called before the first frame update
     void Start()
@@ -30,7 +27,7 @@ public class LookInteractor : MonoBehaviour
             }
             catch (OperationCanceledException exception)
             {
-                Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+                //Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
             }
             finally
             {
@@ -50,7 +47,7 @@ public class LookInteractor : MonoBehaviour
             }
             catch (OperationCanceledException exception)
             {
-                Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+                //Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
             }
             finally
             {
@@ -70,7 +67,7 @@ public class LookInteractor : MonoBehaviour
             }
             catch (OperationCanceledException exception)
             {
-                Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+                //Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
             }
             finally
             {
@@ -90,7 +87,7 @@ public class LookInteractor : MonoBehaviour
             }
             catch (OperationCanceledException exception)
             {
-                Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
+                //Debug.Log($"{nameof(OperationCanceledException)} thrown with message: {exception.Message}");
             }
             finally
             {

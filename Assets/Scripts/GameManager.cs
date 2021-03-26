@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,7 +26,8 @@ public class GameManager : MonoBehaviour
     public GameObject selectedObject;
     public GameObject currentlyLookingAt;
 
-    private bool selectingInteractable = false, selected = false;
+    [HideInInspector]
+    public bool selectingInteractable = false, selected = false;
     private const int MAX_FILL = 1, MIN_FILL = 0, TASK_DELAY = 50;
 
     private CancellationTokenSource cancelToken;
@@ -54,7 +56,14 @@ public class GameManager : MonoBehaviour
         else if (!selectingInteractable && selectionBar.fillAmount > MIN_FILL)
         {
             selectionBar.fillAmount = MIN_FILL;
-            cancelToken.Cancel();
+            try
+            {
+                cancelToken.Cancel();
+            }
+            catch (ObjectDisposedException exception)
+            {
+                //Debug.Log($"{nameof(ObjectDisposedException)} thrown with message: {exception.Message}");
+            }
         }
         else if (selectionBar.fillAmount >= MAX_FILL)
         {
@@ -74,19 +83,19 @@ public class GameManager : MonoBehaviour
     /// <returns>Task if completed succesfully.</returns>
     public async Task LookingAtInteractable(bool looking, Action action, CancellationTokenSource token, GameObject gameObject)
     {
+        cancelToken = token;
+        currentlyLookingAt = gameObject;
         if (looking)
         {
-            cancelToken = token;
-            currentlyLookingAt = gameObject;
             switch (action)
             {
                 case Action.NoAction:
                     Debug.Log("No action set");
                     break;
-                
+
                 case Action.Select:
                     selectingInteractable = true;
-                    while (!selected)
+                    while (!selected && selectingInteractable)
                         await Task.Delay(TASK_DELAY, cancelToken.Token);
                     break;
 
@@ -97,9 +106,9 @@ public class GameManager : MonoBehaviour
                     break;
 
                 case Action.CheckConditionMet:
-                    while (!selected)
+                    while (!selected && selectingInteractable)
                         await Task.Delay(TASK_DELAY, cancelToken.Token);
-                    checkpointManager.ConditionMet(selectedObject);
+                    SendCheckpointUpdate();
                     break;
             }
         }
@@ -121,5 +130,11 @@ public class GameManager : MonoBehaviour
         grass.SwayGrass(direction, windPower, duration);
         //Move trees
         //Move bushes
+    }
+
+    private void SendCheckpointUpdate()
+    {
+        if (selectedObject != null && selected)
+            checkpointManager.ConditionMet(selectedObject);
     }
 }
