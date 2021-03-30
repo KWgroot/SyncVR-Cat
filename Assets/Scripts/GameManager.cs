@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     public GameObject selectedObject;
     public GameObject currentlyLookingAt;
 
+    [Header("Player")]
+    public GameObject player;
+
     [HideInInspector]
     public bool selectingInteractable = false, selected = false;
     private const int MAX_FILL = 1, MIN_FILL = 0, TASK_DELAY = 50;
