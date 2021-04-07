@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [Header("Dependencies")]
-    public GrassMovement grass;
+    public WindMovement wind;
     public Image selectionBar;
 
     [Header("UI Settings")]
@@ -37,10 +37,9 @@ public class GameManager : MonoBehaviour
 
     public enum Action : int
     {
-        NoAction = 0,
-        Select = 1,
-        WindGust = 2,
-        CheckConditionMet = 3
+        Select = 0,
+        WindGust = 1,
+        CheckConditionMet = 2
     }
 
     // Start is called before the first frame update
@@ -81,38 +80,35 @@ public class GameManager : MonoBehaviour
     /// When called checks if player is looking at interactable and what action to perform.
     /// </summary>
     /// <param name="looking">True if currently looking at interactable.</param>
-    /// <param name="action">Action to perform, can be chained after another.</param>
+    /// <param name="actions">List of actions to perform.</param>
     /// <param name="token">Cancel task if looking away or finished unexpected.</param>
+    /// <param name="gameObject">Object currently being looked at.</param>
     /// <returns>Task if completed succesfully.</returns>
-    public async Task LookingAtInteractable(bool looking, Action action, CancellationTokenSource token, GameObject gameObject)
-    {
-        cancelToken = token;
-        currentlyLookingAt = gameObject;
+    public async Task LookingAtInteractable(bool looking, List<Action> actions, CancellationTokenSource token, GameObject gameObject)
+    {     
         if (looking)
         {
-            switch (action)
+            cancelToken = token;
+            currentlyLookingAt = gameObject;
+
+            foreach (Action action in actions)
             {
-                case Action.NoAction:
-                    Debug.Log("No action set");
-                    break;
+                switch (action)
+                {
+                    case Action.Select:
+                        selectingInteractable = true;
+                        while (!selected && selectingInteractable)
+                            await Task.Delay(TASK_DELAY, cancelToken.Token);
+                        break;
 
-                case Action.Select:
-                    selectingInteractable = true;
-                    while (!selected && selectingInteractable)
-                        await Task.Delay(TASK_DELAY, cancelToken.Token);
-                    break;
+                    case Action.WindGust:
+                        WindGust(direction, windForce, duration);
+                        break;
 
-                case Action.WindGust:
-                    while (!selected && selectingInteractable)
-                        await Task.Delay(TASK_DELAY, cancelToken.Token);
-                    WindGust(direction, windForce, duration);
-                    break;
-
-                case Action.CheckConditionMet:
-                    while (!selected && selectingInteractable)
-                        await Task.Delay(TASK_DELAY, cancelToken.Token);
-                    SendCheckpointUpdate();
-                    break;
+                    case Action.CheckConditionMet:
+                        SendCheckpointUpdate();
+                        break;
+                }
             }
         }
         else
@@ -130,7 +126,7 @@ public class GameManager : MonoBehaviour
     /// <param name="duration">Sets the length that the gust of wind is present for.</param>
     private void WindGust(bool direction, float windPower, float duration)
     {
-        grass.SwayGrass(direction, windPower, duration);
+        wind.Sway(direction, windPower, duration);
         //Move trees
         //Move bushes
     }
@@ -139,5 +135,7 @@ public class GameManager : MonoBehaviour
     {
         if (selectedObject != null && selected)
             checkpointManager.ConditionMet(selectedObject);
+        else if (currentlyLookingAt != null)
+            checkpointManager.ConditionMet(currentlyLookingAt);
     }
 }
