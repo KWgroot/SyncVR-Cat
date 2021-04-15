@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41b50d11aad96eb459076fda47a63707
+guid: 58fb999805946a34ba62e4d390e8fc8b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 81808931405738a468f425b86b976171, type: 2}
+    second: {fileID: 2100000, guid: 41c0a0957ed59974cbbf8af95d374ca0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert5
-    second: {fileID: 2100000, guid: a93ae25b316a4154bbf85600a30bbf05, type: 2}
+      name: lambert7
+    second: {fileID: 2100000, guid: 46c405b3e12f5424aa48953fb6725faa, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: TreeTrunk
-    second: {fileID: 2800000, guid: 290fc68249d21974e95dd0ae8d6954fd, type: 3}
+      name: JackPineTreeTrunk
+    second: {fileID: 2800000, guid: c957b99f0806a0e46838e25932143ea3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: horizon
-    second: {fileID: 2800000, guid: 1897158aed7130f49906532715abf40e, type: 3}
+    second: {fileID: 2800000, guid: 80b4e418d2e4371429b58d292b1ff946, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
