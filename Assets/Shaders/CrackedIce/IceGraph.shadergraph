@@ -221,6 +221,9 @@
         },
         {
             "m_Id": "ace08d614cae4a0ba86f1b4b3aa7b84e"
+        },
+        {
+            "m_Id": "49bb8671cf9044d58ec058fbd9cd67e4"
         }
     ],
     "m_GroupDatas": [],
@@ -1560,6 +1563,9 @@
             },
             {
                 "m_Id": "3abd3b4797224b5ea71934c25c139689"
+            },
+            {
+                "m_Id": "49bb8671cf9044d58ec058fbd9cd67e4"
             }
         ]
     },
@@ -3390,6 +3396,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "3dc9f102c6464f6593c205d891cb33ad",
+    "m_Id": 0,
+    "m_DisplayName": "Alpha",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Alpha",
+    "m_StageCapability": 2,
+    "m_Value": 1.0,
+    "m_DefaultValue": 1.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "3e04337d5125485dafde3246b620bf02",
     "m_Id": 0,
@@ -3734,6 +3755,38 @@
         -1344403610,
         -946747688
     ]
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "49bb8671cf9044d58ec058fbd9cd67e4",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.Alpha",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "3dc9f102c6464f6593c205d891cb33ad"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.Alpha"
 }
 
 {
@@ -5718,8 +5771,8 @@
     "m_ActiveSubTarget": {
         "m_Id": "781dfa8c0d0e4028bd9c45652d5ea845"
     },
-    "m_SurfaceType": 0,
-    "m_AlphaMode": 0,
+    "m_SurfaceType": 1,
+    "m_AlphaMode": 2,
     "m_TwoSided": false,
     "m_AlphaClip": false,
     "m_CustomEditorGUI": ""
