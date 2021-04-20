@@ -3,7 +3,27 @@ guid: 349a02ad568a1c347b30768ccf82de50
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dandelion1FlowerShader
+    second: {fileID: 2100000, guid: fe07e1792a072494682dd50afb700b47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dandelion1Shader
+    second: {fileID: 2100000, guid: 7b62f092c7449d844949f708c0da7115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: c8b431cea8a637a4fabdbec3f789f7fd, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: leaf copy
+    second: {fileID: 2800000, guid: 8184870287166564c99efc69617f50e2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -63,7 +83,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

@@ -3,7 +3,27 @@ guid: c8aabf6421baa514cb821251801672b8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 1c8fff8c1850f284ca9161d60844902c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 35b04c19d0047094b8a82b627b059037, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Magnolia_soulangiana_scanned_leaves - Copy
+    second: {fileID: 2800000, guid: 9b0eb12a41f4d4c489aaa259a74b8b1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: c76479d3a6982ef4bd03826aeb69b975
+    second: {fileID: 2800000, guid: 22a44f5106484c0479a9369fcc8ad551, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -63,7 +83,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
