@@ -15,7 +15,8 @@ public class Scene : MonoBehaviour
         foreach (Transform child in transform)
         {
             checkpoints.Add(child.gameObject);
-            child.gameObject.GetComponent<LookInteractor>().enabled = false;
+            if (child.gameObject.GetComponent<LookInteractor>() != null)
+                child.gameObject.GetComponent<LookInteractor>().enabled = false;
         }
 
         if (checkpointManager.sceneNumber == checkpointManager.scenes.IndexOf(this))

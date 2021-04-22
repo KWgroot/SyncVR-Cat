@@ -27,7 +27,7 @@ public class CheckpointManager : MonoBehaviour
 
     public void ConditionMet(GameObject checkpoint)
     {        
-        if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint != scenes[sceneNumber].checkpoints.Count - 1)
+        if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint != scenes[sceneNumber].checkpoints.Count - 2)
         {
             Debug.Log("Next checkpoint");
             scenes[sceneNumber].currentCheckpoint++;
@@ -40,7 +40,7 @@ public class CheckpointManager : MonoBehaviour
             checkpoint.GetComponent<LookInteractor>().enabled = false;
             gameManager.selected = false;
         }
-        else if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint == scenes[sceneNumber].checkpoints.Count - 1)
+        else if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint == scenes[sceneNumber].checkpoints.Count - 2)
         {
             Debug.Log("Next scene");
             gameManager.dontCancel = false;
