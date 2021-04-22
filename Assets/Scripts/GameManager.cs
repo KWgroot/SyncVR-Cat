@@ -34,8 +34,6 @@ public class GameManager : MonoBehaviour
     private const int MAX_FILL = 1, MIN_FILL = 0, TASK_DELAY = 50;
 
     private CancellationTokenSource cancelToken;
-    [HideInInspector]
-    public HighlightScriptPerObject highlightPerObject;
 
     public enum Action : int
     {
@@ -93,12 +91,6 @@ public class GameManager : MonoBehaviour
             cancelToken = token;
             currentlyLookingAt = gameObject;
 
-            if (gameObject.GetComponent<HighlightScriptPerObject>() != null)
-            {
-                highlightPerObject = gameObject.GetComponent<HighlightScriptPerObject>();
-                highlightPerObject.HighLight(true);
-            }
-
             foreach (Action action in actions)
             {
                 switch (action)
@@ -124,11 +116,6 @@ public class GameManager : MonoBehaviour
             selectingInteractable = false;
             selected = false;
             currentlyLookingAt = null;
-
-            if (highlightPerObject != null)
-            {
-                highlightPerObject.HighLight(false);
-            }            
         }
     }
     /// <summary>

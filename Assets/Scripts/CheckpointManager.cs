@@ -29,20 +29,12 @@ public class CheckpointManager : MonoBehaviour
             Debug.Log("Next checkpoint");
             scenes[sceneNumber].currentCheckpoint++;
             scenes[sceneNumber].checkpoints[scenes[sceneNumber].currentCheckpoint].GetComponent<LookInteractor>().enabled = true;
-            if (gameManager.highlightPerObject != null)
-            {
-                gameManager.highlightPerObject.HighLight(false);
-            }
             checkpoint.GetComponent<LookInteractor>().enabled = false;
             gameManager.selected = false;
         }
         else if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint == scenes[sceneNumber].checkpoints.Count - 1)
         {
             Debug.Log("Next scene");
-            if (gameManager.highlightPerObject != null)
-            {
-                gameManager.highlightPerObject.HighLight(false);
-            }
             checkpoint.GetComponent<LookInteractor>().enabled = false;
             gameManager.selected = false;
             sceneNumber++;
