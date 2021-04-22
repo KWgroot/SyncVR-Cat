@@ -19,7 +19,10 @@ public class CheckpointManager : MonoBehaviour
         foreach (Transform child in transform)
         {
             scenes.Add(child.GetComponent<Scene>());
+            child.gameObject.SetActive(false);
         }
+
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void ConditionMet(GameObject checkpoint)
@@ -48,6 +51,7 @@ public class CheckpointManager : MonoBehaviour
             checkpoint.GetComponent<LookInteractor>().enabled = false;
             gameManager.selected = false;
             sceneNumber++;
+            scenes[sceneNumber].gameObject.SetActive(true);
             scenes[sceneNumber].checkpoints[0].GetComponent<LookInteractor>().enabled = true;
             StartCoroutine(FadeEffect(true));
         }
@@ -66,6 +70,7 @@ public class CheckpointManager : MonoBehaviour
                 yield return null;
             }
             Debug.Log("Faded out");
+            scenes[sceneNumber - 1].gameObject.SetActive(false);
             RelocatePlayer();
             StartCoroutine(FadeEffect(false));
         }
@@ -85,8 +90,8 @@ public class CheckpointManager : MonoBehaviour
 
     private void RelocatePlayer()
     {
-        //gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = false;
+        gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = false;
         gameManager.player.transform.position = scenes[sceneNumber].transform.position;
-        //gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = true;
+        gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = true;
     }
 }
