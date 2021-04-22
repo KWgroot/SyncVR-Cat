@@ -10,11 +10,14 @@ public class LookInteractor : MonoBehaviour
     private GameManager gameManager;
     private CancellationTokenSource cancelToken;
     private List<GameManager.Action> actions;
+    private AudioSource audioSource;
     
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        if (GetComponent<AudioSource>() != null)
+            audioSource = GetComponent<AudioSource>();
     }
 
     public void StartInteraction()
@@ -50,13 +53,19 @@ public class LookInteractor : MonoBehaviour
         }
     }
 
-    public async void SendActions()
+    public void PlayAudio()
     {
         if (enabled)
+            actions.Add(GameManager.Action.PlayAudio);
+    }
+
+    public async void SendActions()
+    {
+        if (enabled && !gameManager.dontCancel)
         {
             try
             {
-                await gameManager.LookingAtInteractable(true, actions, cancelToken, this.gameObject);
+                await gameManager.LookingAtInteractable(true, actions, cancelToken, this.gameObject, audioSource);
             }
             catch (OperationCanceledException exception)
             {
@@ -75,7 +84,7 @@ public class LookInteractor : MonoBehaviour
         {
             try
             {
-                await gameManager.LookingAtInteractable(false, actions, cancelToken, null);
+                await gameManager.LookingAtInteractable(false, actions, cancelToken, null, null);
             }
             catch (OperationCanceledException exception)
             {

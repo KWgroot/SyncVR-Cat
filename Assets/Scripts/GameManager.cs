@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
 
     [HideInInspector]
-    public bool selectingInteractable = false, selected = false;
+    public bool selectingInteractable = false, selected = false, dontCancel = false;
     private const int MAX_FILL = 1, MIN_FILL = 0, TASK_DELAY = 50;
 
     private CancellationTokenSource cancelToken;
@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour
     {
         Select = 0,
         WindGust = 1,
-        CheckConditionMet = 2
+        CheckConditionMet = 2,
+        PlayAudio = 3
     }
 
     // Start is called before the first frame update
@@ -60,7 +61,8 @@ public class GameManager : MonoBehaviour
             selectionBar.fillAmount = MIN_FILL;
             try
             {
-                cancelToken.Cancel();
+                if (!dontCancel)
+                    cancelToken.Cancel();
             }
             catch (ObjectDisposedException exception)
             {
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
     /// <param name="token">Cancel task if looking away or finished unexpected.</param>
     /// <param name="gameObject">Object currently being looked at.</param>
     /// <returns>Task if completed succesfully.</returns>
-    public async Task LookingAtInteractable(bool looking, List<Action> actions, CancellationTokenSource token, GameObject gameObject)
+    public async Task LookingAtInteractable(bool looking, List<Action> actions, CancellationTokenSource token, GameObject gameObject, AudioSource audioSource)
     {     
         if (looking)
         {
@@ -93,29 +95,43 @@ public class GameManager : MonoBehaviour
 
             foreach (Action action in actions)
             {
-                switch (action)
+                if (!cancelToken.IsCancellationRequested)
                 {
-                    case Action.Select:
-                        selectingInteractable = true;
-                        while (!selected && selectingInteractable)
-                            await Task.Delay(TASK_DELAY, cancelToken.Token);
-                        break;
+                    switch (action)
+                    {
+                        case Action.Select:
+                            selectingInteractable = true;
+                            while (!selected && selectingInteractable)
+                                await Task.Delay(TASK_DELAY, cancelToken.Token);
+                            break;
 
-                    case Action.WindGust:
-                        WindGust(direction, windForce, duration);
-                        break;
+                        case Action.WindGust:
+                            WindGust(direction, windForce, duration);
+                            break;
 
-                    case Action.CheckConditionMet:
-                        SendCheckpointUpdate();
-                        break;
+                        case Action.CheckConditionMet:
+                            SendCheckpointUpdate();
+                            break;
+
+                        case Action.PlayAudio:
+                            audioSource.Play();
+                            dontCancel = true;
+                            while (audioSource.isPlaying)
+                                await Task.Delay(TASK_DELAY, cancelToken.Token);
+                            break;
+                    }
                 }
             }
         }
         else
         {
-            selectingInteractable = false;
-            selected = false;
-            currentlyLookingAt = null;
+            if (!dontCancel)
+            {
+                cancelToken.Cancel();
+                selectingInteractable = false;
+                selected = false;
+                currentlyLookingAt = null;
+            }            
         }
     }
     /// <summary>
