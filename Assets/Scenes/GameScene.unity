@@ -1693,7 +1693,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1776,7 +1776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248659242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.126, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1687258585}
@@ -2562,7 +2562,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425815423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.99, y: -40.171, z: -30.86}
+  m_LocalPosition: {x: 20.99, y: -39.54, z: -30.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 829207439}
@@ -5945,7 +5945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090934500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26, y: -0.963, z: 20.51}
+  m_LocalPosition: {x: -26, y: -0.465, z: 20.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2655715474556475562}
@@ -9098,7 +9098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.529, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2100126152}
@@ -9545,7 +9545,7 @@ MonoBehaviour:
   m_CameraGameObject: {fileID: 1687258581}
   m_TrackingOriginMode: 1
   m_TrackingSpace: 3
-  m_CameraYOffset: 1.36144
+  m_CameraYOffset: 0.3
 --- !u!4 &1707704222
 Transform:
   m_ObjectHideFlags: 0
@@ -9554,7 +9554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707704220}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 19.583, y: -0.334, z: 22.271}
+  m_LocalPosition: {x: 19.736, y: 0, z: 22.271}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 248659243}
@@ -10946,7 +10946,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.1
-      minScalar: 0.07
+      minScalar: 0.08
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -15465,8 +15465,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960297776}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -7.7870007, y: 3.8339999, z: 4.491001}
-  m_LocalScale: {x: 0.6888532, y: 0.6888532, z: 0.6888532}
+  m_LocalPosition: {x: -9.05, y: 4.13, z: 4.491001}
+  m_LocalScale: {x: 1.020605, y: 1.020605, z: 1.020605}
   m_Children: []
   m_Father: {fileID: 1997616598}
   m_RootOrder: 2
@@ -16206,7 +16206,7 @@ Transform:
   m_GameObject: {fileID: 2077030928}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.14, y: 3.01, z: -0.11}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.644589, y: 0.644589, z: 0.644589}
   m_Children: []
   m_Father: {fileID: 1090934501}
   m_RootOrder: 2
@@ -22899,7 +22899,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248821045409706957}
   m_LocalRotation: {x: -0, y: -0.9902013, z: -0, w: 0.1396473}
-  m_LocalPosition: {x: 8.81, y: -0.4, z: 2.6}
+  m_LocalPosition: {x: 8.81, y: -0.8440001, z: 2.6}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 7156715570296121261}
@@ -26360,15 +26360,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427573069072433680}
-  m_LocalRotation: {x: -0, y: 0.99971586, z: -0, w: -0.023838952}
-  m_LocalPosition: {x: 2.506466, y: -0.449, z: 3.4978676}
+  m_LocalRotation: {x: -0, y: 0.9539616, z: -0, w: -0.29992896}
+  m_LocalPosition: {x: 6.368162, y: -1.168, z: 7.30686}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 1911040939373147515}
   - {fileID: 7864710134302347194}
   m_Father: {fileID: 1090934501}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 182.732, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 214.907, z: 0}
 --- !u!4 &2670188273604022800
 Transform:
   m_ObjectHideFlags: 0
