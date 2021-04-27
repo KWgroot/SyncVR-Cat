@@ -136,7 +136,14 @@ public class GameManager : MonoBehaviour
         {
             if (!dontCancel)
             {
-                cancelToken.Cancel();
+                try
+                {
+                    cancelToken.Cancel();
+                }
+                catch (ObjectDisposedException exception)
+                {
+                    //Debug.Log($"{nameof(ObjectDisposedException)} thrown with message: {exception.Message}");
+                }
                 selectingInteractable = false;
                 selected = false;
                 currentlyLookingAt = null;

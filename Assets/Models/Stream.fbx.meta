@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: aab21e5e9c09397429f90ae65272ca31
+guid: 045dd1b1897a635408d9029f8f5d121f
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MountainMat1
+    second: {fileID: 2100000, guid: 8abdf549e386d684c8c58df4d82c8ed4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -63,7 +68,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

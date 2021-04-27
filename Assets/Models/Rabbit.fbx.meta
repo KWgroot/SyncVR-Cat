@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 1ce30cd16ba15ba47859bfd21d4a18c1
+guid: e9221b35f75e8ed489d892f31419a2f4
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7
+    second: {fileID: 2100000, guid: 78687b395f3bc8544a50378b889ee532, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: 870fd8c461603c94b8e01908b9ecdff6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -63,7 +73,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

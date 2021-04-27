@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 118a7fa5df53ad14aa1489e5a7500c4b
+guid: a2747bebfd3561142a5d4e260f5eb84e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MountainMat1
-    second: {fileID: 2100000, guid: 15e6ba236d6a1f54ca268124a156d941, type: 2}
+    second: {fileID: 2100000, guid: fb5d86fdfbf702f48876ebff063c1fcb, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: BaseColors
-    second: {fileID: 2800000, guid: dc25d9c50f8d82f41822ee6b48c7df86, type: 3}
+      name: MountainMat1_Flattened_Bump Map
+    second: {fileID: 2800000, guid: 551d6ee0b9bfd1146bf318ea82e0942a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: BumpMap
-    second: {fileID: 2800000, guid: ab64d4b221cabc44d8eac99934f261d7, type: 3}
+      name: MountainMat1_Flattened_Diffuse
+    second: {fileID: 2800000, guid: 7fa37b888856f2c4bac0341858cdce92, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -46,7 +46,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1

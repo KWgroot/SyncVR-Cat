@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ba519be515fc384aa2f819c73fba549
+guid: ffa1f3b33d4b14e4cb8264ddebc02667
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 41c0a0957ed59974cbbf8af95d374ca0, type: 2}
+    second: {fileID: 2100000, guid: 14c3e9e02c26a2943a898dbf48914dd4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert7
-    second: {fileID: 2100000, guid: 46c405b3e12f5424aa48953fb6725faa, type: 2}
+    second: {fileID: 2100000, guid: b4ca5abff8d821143b535724bf3d873b, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Leaves
-    second: {fileID: 2800000, guid: 96b45db8d9359704783b220cd62d0a56, type: 3}
+    second: {fileID: 2800000, guid: fde392ada5c2eec429841d94e5be9f31, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: bush_PNG7205
-    second: {fileID: 2800000, guid: d4d56e853fe0ef4458ae46fc3abae015, type: 3}
+    second: {fileID: 2800000, guid: 7e1ad96b61a341246aa616cc88640145, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

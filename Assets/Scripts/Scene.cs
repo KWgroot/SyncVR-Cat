@@ -11,7 +11,10 @@ public class Scene : MonoBehaviour
     void Start()
     {
         checkpointManager = transform.parent.GetComponent<CheckpointManager>();
+    }
 
+    public void FillCheckpoints()
+    {
         foreach (Transform child in transform)
         {
             checkpoints.Add(child.gameObject);

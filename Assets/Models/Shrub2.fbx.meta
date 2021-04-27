@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd674681079808d4795a49584ee92782
+guid: 360d331c47116154281c607cb2fc58e6
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 2233e1d9777ada44283586d0adaac469, type: 2}
+    second: {fileID: 2100000, guid: 776d3bd8d8d9e7c4689aef074a2404e9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert6
-    second: {fileID: 2100000, guid: 141607bb2cf721742a215c458defade0, type: 2}
+    second: {fileID: 2100000, guid: a828cea58a3429b47933abe0ca568a76, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Magnolia_soulangiana_scanned_leaves - Copy
-    second: {fileID: 2800000, guid: 87bb92103b204a0468ee0d7960e4d236, type: 3}
+    second: {fileID: 2800000, guid: 76ad66c6340b7c2429e0c29cdede3f94, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: R0f07f932338e3083500c93ac6cd8a20d
-    second: {fileID: 2800000, guid: 45a748b7f7e18c64589a39095288cea1, type: 3}
+    second: {fileID: 2800000, guid: 6900e4b31cef7324998d64970a07e9ae, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

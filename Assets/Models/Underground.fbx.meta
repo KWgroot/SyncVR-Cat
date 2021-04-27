@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 654ae4a95af217048bb5662818658ed1
+guid: 7b7bfe59402f48e439c404aa96b08079
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: UndergroundMaterial1
-    second: {fileID: 2100000, guid: d1b461e4ccd97a54692124cdc7bb5561, type: 2}
+    second: {fileID: 2100000, guid: 612659b22f73eb049ac7c5ffca638b07, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BaseLayers
-    second: {fileID: 2800000, guid: 8140612058960364884e91161824b307, type: 3}
+    second: {fileID: 2800000, guid: 2f39deac61de30b479ad01e7b359b04a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BumpLayers
-    second: {fileID: 2800000, guid: 7d0c7abf107890644a8f0d55531ecb80, type: 3}
+    second: {fileID: 2800000, guid: b3eca14fc7482c54f8c823a131a819a9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: horizon
-    second: {fileID: 2800000, guid: 34e7c0d0e885fb2458da2370538fa47d, type: 3}
+    second: {fileID: 2800000, guid: dd93ce04a555d824fa8256ad742459a8, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -51,7 +51,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1

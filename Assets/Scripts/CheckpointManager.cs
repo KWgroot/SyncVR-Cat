@@ -23,11 +23,14 @@ public class CheckpointManager : MonoBehaviour
         }
 
         transform.GetChild(0).gameObject.SetActive(true);
+
+        foreach (Scene scene in scenes)
+            scene.FillCheckpoints();
     }
 
     public void ConditionMet(GameObject checkpoint)
     {        
-        if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint != scenes[sceneNumber].checkpoints.Count - 2)
+        if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint != scenes[sceneNumber].checkpoints.Count - 1)
         {
             Debug.Log("Next checkpoint");
             scenes[sceneNumber].currentCheckpoint++;
@@ -40,7 +43,7 @@ public class CheckpointManager : MonoBehaviour
             checkpoint.GetComponent<LookInteractor>().enabled = false;
             gameManager.selected = false;
         }
-        else if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint == scenes[sceneNumber].checkpoints.Count - 2)
+        else if (scenes[sceneNumber].checkpoints.Find(x => x.name == checkpoint.name) && scenes[sceneNumber].currentCheckpoint == scenes[sceneNumber].checkpoints.Count - 1)
         {
             Debug.Log("Next scene");
             gameManager.dontCancel = false;
