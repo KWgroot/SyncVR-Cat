@@ -1,1 +1,0 @@
-# SyncVR-Cat
