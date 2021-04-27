@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7e69f840f03ab0c4ab926446a79c8b90
+guid: 41bdbed83e6f003469b21eea48029ab6
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert3
-    second: {fileID: 2100000, guid: a5572dafa6827e94a9fbe015b5e05b6a, type: 2}
+    second: {fileID: 2100000, guid: bbaf2231aeb3a1742bd5002d7351d85f, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BumpLayer
-    second: {fileID: 2800000, guid: a4e11c4f6de1daa43844ab67c4be8ef2, type: 3}
+    second: {fileID: 2800000, guid: 2b894154f96d2804786bc2988a3b97f7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DiffuseLayer
-    second: {fileID: 2800000, guid: aa9d0a22f70db784fbd73f515b8daee4, type: 3}
+    second: {fileID: 2800000, guid: 9bb9b5d8a32e8884b96257de8fc93425, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: horizon
-    second: {fileID: 2800000, guid: 32521e3ebfaab0f4cae23ee54ddb5398, type: 3}
+    second: {fileID: 2800000, guid: 5cb152ce2a34de341af4dd0d577342f6, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -51,7 +51,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1

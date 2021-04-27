@@ -1,32 +1,29 @@
 fileFormatVersion: 2
-guid: 3ca2faa5fa6de944fa171e32e418996f
+guid: 34226c3e3d856524f8111f58b4235fd2
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: 1827226128182048838
-    second: Take 001
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 7625383db8f949a4096f36353f85f9cc, type: 2}
+    second: {fileID: 2100000, guid: e6adde814325ea44f9e43e168802807a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert2
-    second: {fileID: 2100000, guid: 96e178934dd2f474696bde80c3deb9d4, type: 2}
+    second: {fileID: 2100000, guid: 9da7e52687aca2b4bb9e4ccff791f42e, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: c76479d3a6982ef4bd03826aeb69b975
-    second: {fileID: 2800000, guid: 96e42a80205eb4645b23a5e6f9080423, type: 3}
+    second: {fileID: 2800000, guid: 28d9e51acf99cb7439b53056c7f51046, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: lambert1_Base_Color
-    second: {fileID: 2800000, guid: 86a3be104c19d6f43b90d9122870948e, type: 3}
+    second: {fileID: 2800000, guid: 522f94bcd2ea4fa4d81fb9e598a9d783, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

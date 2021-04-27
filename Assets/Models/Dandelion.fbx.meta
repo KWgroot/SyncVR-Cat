@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 349a02ad568a1c347b30768ccf82de50
+guid: 4679ff7f887cf324d8bfb4091e6703cd
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: dandelion1FlowerShader
-    second: {fileID: 2100000, guid: fe07e1792a072494682dd50afb700b47, type: 2}
+    second: {fileID: 2100000, guid: 7270aa30f1af6ba4da3d6a4320aa9b5b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: dandelion1Shader
-    second: {fileID: 2100000, guid: 7b62f092c7449d844949f708c0da7115, type: 2}
+    second: {fileID: 2100000, guid: 866c7e45dc0369e4f834af7e1a699ebb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert3
-    second: {fileID: 2100000, guid: c8b431cea8a637a4fabdbec3f789f7fd, type: 2}
+    second: {fileID: 2100000, guid: 97bf0260bc930ba4fb27cf51e34e2fd4, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: leaf copy
-    second: {fileID: 2800000, guid: 8184870287166564c99efc69617f50e2, type: 3}
+    second: {fileID: 2800000, guid: 9ae0982386df6b54991fd614925e3d3b, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
