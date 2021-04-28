@@ -25,7 +25,7 @@ public class CheckpointManager : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
 
         foreach (Scene scene in scenes)
-            scene.FillCheckpoints();
+            scene.FillCheckpoints(this);
     }
 
     public void ConditionMet(GameObject checkpoint)

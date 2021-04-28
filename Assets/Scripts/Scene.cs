@@ -4,16 +4,9 @@ using UnityEngine;
 public class Scene : MonoBehaviour
 {
     public List<GameObject> checkpoints = new List<GameObject>();
-    private CheckpointManager checkpointManager;
     public int currentCheckpoint = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        checkpointManager = transform.parent.GetComponent<CheckpointManager>();
-    }
-
-    public void FillCheckpoints()
+    public void FillCheckpoints(CheckpointManager manager)
     {
         foreach (Transform child in transform)
         {
@@ -22,7 +15,7 @@ public class Scene : MonoBehaviour
                 child.gameObject.GetComponent<LookInteractor>().enabled = false;
         }
 
-        if (checkpointManager.sceneNumber == checkpointManager.scenes.IndexOf(this))
+        if (manager.sceneNumber == manager.scenes.IndexOf(this))
             checkpoints[0].GetComponent<LookInteractor>().enabled = true;
     }
 }
