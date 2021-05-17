@@ -111,8 +111,8 @@ public class CheckpointManager : MonoBehaviour
 
     private void RelocatePlayer()
     {
-        //gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = false;
+        gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = false;
         gameManager.player.transform.position = scenes[sceneNumber].transform.position;
-        //gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = true;
+        gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = true;
     }
 }
