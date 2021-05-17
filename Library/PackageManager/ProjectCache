@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637568348541305074
+      ticks: 637568482999481750
     m_Hash: 962631456
   m_LockFileStatus:
     m_FilePath: N:/Unity Projects/SyncVR-Cat/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637568349566893109
+      ticks: 637568494737180832
     m_Hash: 2462912423
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -1410,7 +1410,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.1.4
       source: 6
-      resolvedPath: N:\Unity Projects\SyncVR-Cat\Library\PackageCache\com.valvesoftware.unity.openvr@d55fd48e47b9-1621238054398
+      resolvedPath: N:\Unity Projects\SyncVR-Cat\Library\PackageCache\com.valvesoftware.unity.openvr@d55fd48e47b9-1621251499947
       assetPath: Packages/com.valvesoftware.unity.openvr
       name: com.valvesoftware.unity.openvr
       displayName: OpenVR XR Plugin
@@ -4013,7 +4013,7 @@ m_PackageAssets:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 637568348543978515
+        ticks: 637568482999466877
       m_Hash: 2919789393
 m_ProjectPath: N:/Unity Projects/SyncVR-Cat/Packages
 m_EditorVersion: 2020.2.2f1 (068178b99f32)

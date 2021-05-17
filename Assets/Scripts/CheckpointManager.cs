@@ -10,6 +10,7 @@ public class CheckpointManager : MonoBehaviour
     public int sceneNumber = 0;
     public Image fadeImage;
     private GameManager gameManager;
+    private AudioSource startAudio;
     
     // Start is called before the first frame update
     void Start()
@@ -55,9 +56,26 @@ public class CheckpointManager : MonoBehaviour
             gameManager.selected = false;
             sceneNumber++;
             scenes[sceneNumber].gameObject.SetActive(true);
-            scenes[sceneNumber].checkpoints[0].GetComponent<LookInteractor>().enabled = true;
+            if (scenes[sceneNumber].gameObject.GetComponent<AudioSource>() == null)
+                scenes[sceneNumber].checkpoints[0].GetComponent<LookInteractor>().enabled = true;
+            else
+            {
+                startAudio = scenes[sceneNumber].gameObject.GetComponent<AudioSource>();
+                StartCoroutine(WaitToStart(startAudio));
+            }
             StartCoroutine(FadeEffect(true));
         }
+    }
+
+    IEnumerator WaitToStart(AudioSource startAudio)
+    {
+        if (startAudio.isPlaying)
+        {
+            yield return new WaitForSeconds(2);
+            StartCoroutine(WaitToStart(startAudio));
+        }
+        else
+            scenes[sceneNumber].checkpoints[0].GetComponent<LookInteractor>().enabled = true;
     }
 
     IEnumerator FadeEffect(bool fadeAway)
@@ -93,8 +111,8 @@ public class CheckpointManager : MonoBehaviour
 
     private void RelocatePlayer()
     {
-        gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = false;
+        //gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = false;
         gameManager.player.transform.position = scenes[sceneNumber].transform.position;
-        gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = true;
+        //gameManager.player.transform.GetChild(0).transform.GetChild(0).GetComponent<SimpleCameraController>().enabled = true;
     }
 }
