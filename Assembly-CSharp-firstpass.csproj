@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0BF843BE-4289-8C56-DC60-95C889043C71}</ProjectGuid>
+    <ProjectGuid>{325FA714-135D-E53A-D65F-BA629450146B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -295,6 +295,12 @@
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -755,23 +761,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
-      <Project>{6B3E1D27-3E6C-DC50-316E-F7377237C610}</Project>
+      <Project>{B2B5D632-6F8E-81A4-D015-6C3BDFD1B06E}</Project>
       <Name>SteamVR_Input_Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR.csproj">
-      <Project>{A84EF8DD-F75E-8C66-1959-CB4D6C1D6DAF}</Project>
+      <Project>{37B4BC5C-47D6-84D9-1BA4-50DB49EAA50B}</Project>
       <Name>SteamVR</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
-      <Project>{38383E11-1F29-0F5F-D24F-7DBC1D250ABC}</Project>
+      <Project>{8E17C554-0195-509F-AEBC-43373D8FD6B3}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Editor.csproj">
-      <Project>{1AE03B06-F70A-FACC-D2E0-F735EE2A4A80}</Project>
+      <Project>{A9F6351E-1C49-7D05-7869-8F9468219033}</Project>
       <Name>SteamVR_Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{E374C90D-6FF0-E6E5-01ED-E60237C214CE}</Project>
+      <Project>{A8526ED1-C76C-4F96-B4A9-201587189028}</Project>
       <Name>SteamVR_Actions</Name>
     </ProjectReference>
   </ItemGroup>
