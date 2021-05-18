@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637568482999481750
+      ticks: 637569286968605326
     m_Hash: 962631456
   m_LockFileStatus:
     m_FilePath: N:/Unity Projects/SyncVR-Cat/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637569220149813471
+      ticks: 637569307002713216
     m_Hash: 2462912423
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
